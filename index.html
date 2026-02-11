@@ -3,106 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/intake.js" defer></script>
     <title>Triad Energy</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">🚛 TruckConsult Pro</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="lang-toggle">Español</button>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <div class="logo" data-en="Triad Energy" data-es="Triad Energy">Triad Energy</div>
 
-    <section id="home" class="hero">
-        <h1>Expert Trucking Business Consulting</h1>
-        <p>We help small trucking companies establish their LLC, navigate DMV requirements, manage taxes, and handle all documentation - with specialized support for Spanish-speaking business owners.</p>
-        <a href="#contact" class="cta-button">Get Started Today</a>
-    </section>
+        <ul class="nav-links">
+            <li><a href="#home" data-en="Home" data-es="Inicio">Home</a></li>
+            <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+            <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
+            <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+            
+        </ul>
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
-                    <h3>LLC Formation</h3>
-                    <p>Complete guidance through the business formation process. We handle all paperwork and ensure your company is properly established and compliant.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🚗</div>
-                    <h3>DMV Navigation</h3>
-                    <p>Expert assistance with vehicle registration, titles, permits, and all DMV-related requirements for your trucking operation.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Tax Preparation</h3>
-                    <p>Professional tax planning and preparation services specifically tailored for trucking businesses and subcontractors.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📄</div>
-                    <h3>Documentation Support</h3>
-                    <p>Complete management of all business documentation, compliance requirements, and regulatory filings.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Bilingual Services</h3>
-                    <p>All services available in English and Spanish to ensure clear communication and understanding throughout the process.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🤝</div>
-                    <h3>Ongoing Consulting</h3>
-                    <p>Continuous support and guidance as your business grows. We're here to help you succeed every step of the way.</p>
-                </div>
+        <div class="lang-toggle-container">
+            <button class="lang-btn active" onclick="setLanguage('en', event)">English</button>
+            <button class="lang-btn" onclick="setLanguage('es', event)">Español</button>
+        </div>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1 
+        data-en="Expert Trucking Business Consulting"
+        data-es="Consultoría Experta para Negocios de Transporte">
+        Expert Trucking Business Consulting
+    </h1>
+
+    <p 
+        data-en="We help small trucking companies establish their LLC, navigate DMV requirements, manage IronSheepDog, and handle all documentation, with specialized support for Spanish-speaking business owners."
+        data-es="Ayudamos a pequeñas empresas de transporte a establecer su LLC, navegar los requisitos del DMV, manejar IronSheepDog y toda la documentación, con apoyo especializado para dueños de negocios de habla hispana.">
+        We help small trucking companies establish their LLC, navigate DMV requirements, manage IronSheepDog, and handle all documentation, with specialized support for Spanish-speaking business owners.
+    </p>
+
+    <a href="intakeform.html" class="cta-button"
+       data-en="Get Started Today"
+       data-es="Comienza Hoy">
+        Get Started Today
+    </a>
+</section>
+
+<section id="services" class="services">
+    <div class="container">
+        <h2 class="section-title"
+            data-en="Our Services"
+            data-es="Nuestros Servicios">
+            Our Services
+        </h2>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3 data-en="LLC Formation" data-es="Formación de LLC">LLC Formation</h3>
+                <p 
+                    data-en="Complete guidance through the business formation process. We handle all paperwork and ensure your company is compliant."
+                    data-es="Guía completa durante el proceso de formación del negocio. Nos encargamos de toda la documentación y cumplimiento.">
+                    Complete guidance through the business formation process. We handle all paperwork and ensure your company is compliant.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3 data-en="DMV Navigation" data-es="Gestión del DMV">DMV Navigation</h3>
+                <p 
+                    data-en="Expert assistance with vehicle registration, titles, permits, and all DMV requirements."
+                    data-es="Asistencia experta con registro de vehículos, títulos, permisos y todos los requisitos del DMV.">
+                    Expert assistance with vehicle registration, titles, permits, and all DMV requirements.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🐕</div>
+                <h3 data-en="IronSheepDog Help" data-es="Ayuda con IronSheepDog">IronSheepDog Help</h3>
+                <p 
+                    data-en="Professional assistance with IronSheepDog platform setup, load management, and optimization for trucking businesses."
+                    data-es="Asistencia profesional con configuración de IronSheepDog, gestión de cargas y optimización para negocios de transporte.">
+                    Professional assistance with IronSheepDog platform setup, load management, and optimization for trucking businesses.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3 data-en="Documentation Support" data-es="Soporte de Documentación">Documentation Support</h3>
+                <p 
+                    data-en="Complete management of business documentation, compliance, and filings."
+                    data-es="Gestión completa de documentación empresarial, cumplimiento y registros.">
+                    Complete management of business documentation, compliance, and filings.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌍</div>
+                <h3 data-en="Bilingual Services" data-es="Servicios Bilingües">Bilingual Services</h3>
+                <p 
+                    data-en="All services available in English and Spanish."
+                    data-es="Todos los servicios disponibles en inglés y español.">
+                    All services available in English and Spanish.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3 data-en="Ongoing Consulting" data-es="Consultoría Continua">Ongoing Consulting</h3>
+                <p 
+                    data-en="Continuous support and guidance as your business grows."
+                    data-es="Apoyo y orientación continua a medida que su negocio crece.">
+                    Continuous support and guidance as your business grows.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 data-en="About Us" data-es="Sobre Nosotros">About Us</h2>
+
+                <p 
+                    data-en="We specialize in helping small trucking subcontractors navigate business formation and compliance."
+                    data-es="Nos especializamos en ayudar a pequeños subcontratistas de transporte con la formación y el cumplimiento empresarial.">
+                    We specialize in helping small trucking subcontractors navigate business formation and compliance.
+                </p>
+
+                <p 
+                    data-en="With years of experience, we provide personalized consulting especially for Spanish-speaking communities."
+                    data-es="Con años de experiencia, brindamos consultoría personalizada especialmente para comunidades de habla hispana.">
+                    With years of experience, we provide personalized consulting especially for Spanish-speaking communities.
+                </p>
+
+                <p 
+                    data-en="Our mission is to make starting and running a trucking business simple and stress free."
+                    data-es="Nuestra misión es hacer que iniciar y administrar un negocio de transporte sea simple y sin estrés.">
+                    Our mission is to make starting and running a trucking business simple and stress free.
+                </p>
+            </div>
+
+            <div class="about-image">🚛</div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="contact-content">
+        <h2 data-en="Get In Touch" data-es="Contáctanos">Get In Touch</h2>
+
+        <p 
+            data-en="Ready to start or grow your trucking business? Contact us today."
+            data-es="¿Listo para comenzar o hacer crecer su negocio de transporte? Contáctenos hoy.">
+            Ready to start or grow your trucking business? Contact us today.
+        </p>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3 data-en="📞 Phone" data-es="📞 Teléfono">📞 Phone</h3>
+                <p>(555) 123-4567</p>
+            </div>
+
+            <div class="contact-item">
+                <h3 data-en="📧 Email" data-es="📧 Correo">📧 Email</h3>
+                <p>info@triadenergy.com</p>
+            </div>
+
+            <div class="contact-item">
+                <h3 data-en="📍 Location" data-es="📍 Ubicación">📍 Location</h3>
+                <p data-en="Serving nationwide" data-es="Servicio a nivel nacional">Serving nationwide</p>
             </div>
         </div>
-    </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Us</h2>
-                    <p>We specialize in helping small trucking subcontractors navigate the complex world of business formation, compliance, and documentation.</p>
-                    <p>With years of experience in the trucking industry and a deep understanding of the challenges faced by small business owners, especially those in Spanish-speaking communities, we provide personalized, comprehensive consulting services.</p>
-                    <p>Our mission is to make the process of starting and running a trucking business as smooth as possible, allowing you to focus on what you do best - driving and growing your business.</p>
-                </div>
-                <div class="about-image">
-                    🚛
-                </div>
-            </div>
+        <div class="cta-section">
+            <a href="intakeform.html" class="cta-button"
+               data-en="Fill Out Our Intake Form"
+               data-es="Complete Nuestro Formulario">
+                Fill Out Our Intake Form
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact" class="contact">
-        <div class="contact-content">
-            <h2>Get In Touch</h2>
-            <p>Ready to start or grow your trucking business? Contact us today for a free consultation.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📞 Phone</h3>
-                    <p>(555) 123-4567</p>
-                </div>
-                <div class="contact-item">
-                    <h3>📧 Email</h3>
-                    <p>info@truckconsultpro.com</p>
-                </div>
-                <div class="contact-item">
-                    <h3>📍 Location</h3>
-                    <p>Serving nationwide</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 TruckConsult Pro. All rights reserved. | Proudly serving the trucking community</p>
-    </footer>
+<footer>
+    <p 
+        data-en="© 2024 Triad Energy. All rights reserved. Proudly serving the trucking community."
+        data-es="© 2024 Triad Energy. Todos los derechos reservados. Sirviendo con orgullo a la comunidad de transporte.">
+        © 2024 Triad Energy. All rights reserved. Proudly serving the trucking community.
+    </p>
+</footer>
 </body>
 </html>
