@@ -30,7 +30,7 @@
 
         <form id="intakeForm" action="https://api.web3forms.com/submit" method="POST">
             <!-- Web3Forms Configuration -->
-            <input type="hidden" name="access_key" value="0d1f5847-6892-4b8f-96d9-9c146a56c189">
+            <input type="hidden" name="access_key" value="dbbdbdc8-3343-49d7-b61c-2e3319e53dfe">
             <input type="hidden" name="subject" value="New Client Intake Form - Triad Energy">
             <input type="hidden" name="from_name" value="Triad Energy Intake Form">
 
@@ -290,18 +290,6 @@
                             <div class="upload-btn-icon">📷</div>
                             <div class="upload-btn-text" data-en="Take Photo" data-es="Tomar Foto">Take Photo</div>
                         </div>
-
-                        <label for="scanInput" class="upload-btn">
-                            <div class="upload-btn-icon">📄</div>
-                            <div class="upload-btn-text" data-en="Scan Document" data-es="Escanear Documento">Scan Document</div>
-                        </label>
-                        <input type="file" id="scanInput" accept="image/*" capture="environment">
-                    </div>
-
-                    <video id="cameraPreview" autoplay playsinline></video>
-                    <div class="camera-controls" id="cameraControls">
-                        <button type="button" onclick="capturePhoto()" data-en="📸 Capture" data-es="📸 Capturar">📸 Capture</button>
-                        <button type="button" onclick="stopCamera()" data-en="✖ Cancel" data-es="✖ Cancelar">✖ Cancel</button>
                     </div>
 
                     <div class="uploaded-files" id="uploadedFiles"></div>
@@ -312,5 +300,15 @@
         </form>
     </div>
 </div>
+
+<!-- Fullscreen Camera Overlay -->
+<div id="cameraOverlay" class="camera-overlay" style="display:none;">
+    <video id="cameraPreview" autoplay playsinline></video>
+    <div class="camera-overlay-controls">
+        <button type="button" class="camera-capture-btn" onclick="capturePhoto()">📸</button>
+        <button type="button" class="camera-cancel-btn" onclick="stopCamera()" data-en="Cancel" data-es="Cancelar">Cancel</button>
+    </div>
+</div>
+
 </body>
 </html>
