@@ -3,312 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Information Intake - Triad Energy</title>
+    <meta name="description" content="Triad Energy Client Intake Form – Start your trucking business consultation.">
+    <title>Client Intake Form | Triad Energy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/intakestyle.css">
-    <script src="./js/intake.js" defer></script>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1>Client Information Intake</h1>
-        <p data-en="Please complete this form and upload required documents" data-es="Complete este formulario y suba los documentos requeridos">Please complete this form and upload required documents</p>
-    </div>
 
-    <div class="form-content">
-        <div class="lang-toggle-container">
-            <button class="lang-btn active" onclick="setLanguage('en', event)">English</button>
-            <button class="lang-btn" onclick="setLanguage('es', event)">Español</button>
+<!-- Back-to-home bar -->
+<div class="intake-topbar">
+    <a href="index.html" class="intake-back-link">
+        <span class="intake-topbar-name">Triad Energy</span>
+    </a>
+    <a href="index.html" class="intake-home-btn">← Back to Home</a>
+</div>
+
+<main class="intake-wrapper">
+    <div class="intake-container">
+
+        <!-- Header -->
+        <div class="intake-header">
+            <p class="intake-eyebrow" data-en="Consultation Request" data-es="Solicitud de Consulta">Consultation Request</p>
+            <h1 data-en="Client Intake Form" data-es="Formulario de Registro">Client Intake Form</h1>
+            <p data-en="Please complete this form and upload any required documents. We'll follow up within 3–5 business days."
+               data-es="Complete este formulario y suba los documentos requeridos. Le responderemos en 3–5 días hábiles.">
+                Please complete this form and upload any required documents. We'll follow up within 3–5 business days.
+            </p>
         </div>
 
-        <div class="success-message" id="successMessage">
-            <span data-en="✓ Your information has been submitted successfully! We will contact you soon." data-es="✓ ¡Su información ha sido enviada exitosamente! Nos contactaremos pronto.">✓ Your information has been submitted successfully! We will contact you soon.</span>
-        </div>
+        <div class="intake-body">
 
-        <div class="error-message" id="errorMessage">
-            <span data-en="✗ There was an error submitting your information. Please try again." data-es="✗ Hubo un error al enviar su información. Por favor intente de nuevo.">✗ There was an error submitting your information. Please try again.</span>
-        </div>
-
-        <form id="intakeForm" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms Configuration -->
-            <input type="hidden" name="access_key" value="dbbdbdc8-3343-49d7-b61c-2e3319e53dfe">
-            <input type="hidden" name="subject" value="New Client Intake Form - Triad Energy">
-            <input type="hidden" name="from_name" value="Triad Energy Intake Form">
-
-            <!-- Client Type Selection -->
-            <div class="form-section">
-                <h2 data-en="I am requesting services for:" data-es="Solicito servicios para:">I am requesting services for:</h2>
-                
-                <div class="client-type-selector">
-                    <button type="button" class="client-type-btn active" id="personalBtn" onclick="selectClientType('personal')">
-                        <div class="client-type-icon">👤</div>
-                        <div class="client-type-text" data-en="Personal" data-es="Personal">Personal</div>
-                    </button>
-                    
-                    <button type="button" class="client-type-btn" id="businessBtn" onclick="selectClientType('business')">
-                        <div class="client-type-icon">🏢</div>
-                        <div class="client-type-text" data-en="Business" data-es="Negocio">Business</div>
-                    </button>
-                </div>
-                <input type="hidden" name="clientType" id="clientTypeInput" value="personal">
+            <!-- Lang toggle -->
+            <div class="lang-toggle-container" role="group" aria-label="Language selection">
+                <button class="lang-btn active" onclick="setLanguage('en', event)" aria-pressed="true">English</button>
+                <button class="lang-btn" onclick="setLanguage('es', event)" aria-pressed="false">Español</button>
             </div>
 
-            <!-- Personal Information Section -->
-            <div class="form-section" id="personalInfo">
-                <h2 data-en="Personal Information" data-es="Información Personal">Personal Information</h2>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>
-                            <span class="required">*</span> 
-                            <span data-en="First Name" data-es="Nombre">First Name</span>
-                        </label>
-                        <input type="text" 
-                            name="personal_firstName"
-                            data-en="John" 
-                            data-es="Juan"
-                            placeholder="John" 
-                            data-required="true"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>
-                            <span class="required">*</span> 
-                            <span data-en="Last Name" data-es="Apellido">Last Name</span>
-                        </label>
-                        <input type="text" 
-                            name="personal_lastName" 
-                            data-en="Smith"
-                            data-es="García"
-                            placeholder="Smith"
-                            data-required="true"
-                            required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>
-                            <span class="required">*</span> 
-                            <span data-en="Email Address" data-es="Correo Electrónico">Email Address</span>
-                        </label>
-                        <input type="email" 
-                            name="personal_email"
-                            data-en="example@gmail.com"
-                            data-es="ejemplo@gmail.com"
-                            placeholder="example@gmail.com" 
-                            data-required="true"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>
-                            <span class="required">*</span> 
-                            <span data-en="Phone Number" data-es="Número de Teléfono">Phone Number</span>
-                        </label>
-                        <input type="tel" 
-                            name="personal_phone" 
-                            data-en="(123) 456-7890"
-                            data-es="(123) 456-7890"
-                            placeholder="(123) 456-7890" 
-                            data-required="true"
-                            required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <span data-en="Address" data-es="Dirección">Address</span>
-                    </label>
-                    <input type="text" 
-                        name="personal_address"
-                        data-en="123 Main Street, City, State ZIP"
-                        data-es="Calle Principal 123, Ciudad, Estado CP"
-                        placeholder="123 Main Street, City, State ZIP">
-                </div>
+            <!-- Status messages -->
+            <div class="msg msg--success" id="successMessage" role="alert" hidden>
+                <span data-en="✓ Your information has been submitted successfully! We will contact you soon."
+                      data-es="✓ ¡Su información ha sido enviada exitosamente! Nos contactaremos pronto.">
+                    ✓ Your information has been submitted successfully! We will contact you soon.
+                </span>
+            </div>
+            <div class="msg msg--error" id="errorMessage" role="alert" hidden>
+                <span data-en="✗ There was an error submitting your information. Please try again."
+                      data-es="✗ Hubo un error al enviar su información. Por favor intente de nuevo.">
+                    ✗ There was an error submitting your information. Please try again.
+                </span>
             </div>
 
-            <!-- Business Information Section -->
-            <div class="form-section" id="businessInfo" style="display: none;">
-                <h2 data-en="Business Information" data-es="Información del Negocio">Business Information</h2>
+            <form id="intakeForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                <!-- Web3Forms config -->
+                <input type="hidden" name="access_key" value="dbbdbdc8-3343-49d7-b61c-2e3319e53dfe">
+                <input type="hidden" name="subject" value="New Client Intake Form - Triad Energy">
+                <input type="hidden" name="from_name" value="Triad Energy Intake Form">
 
-                <div class="form-group">
-                    <label>
-                        <span class="required">*</span> 
-                        <span data-en="Business Name" data-es="Nombre del Negocio">Business Name</span>
-                    </label>
-                    <input type="text" 
-                        name="business_name"
-                        data-en="ABC Trucking LLC"
-                        data-es="ABC Transporte LLC"
-                        placeholder="ABC Trucking LLC"
-                        data-required="true">
-                </div>
+                <!-- ─── Client Type ─── -->
+                <section class="form-section">
+                    <h2 data-en="I am requesting services for:" data-es="Solicito servicios para:">I am requesting services for:</h2>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>
-                            <span class="required">*</span> 
-                            <span data-en="Contact Person First Name" data-es="Nombre de Contacto">Contact Person First Name</span>
-                        </label>
-                        <input type="text" 
-                            name="business_contactFirstName"
-                            data-en="John"
-                            data-es="Juan"
-                            placeholder="John"
-                            data-required="true">
+                    <div class="client-type-selector" role="group" aria-label="Client type">
+                        <button type="button" class="client-type-btn active" id="personalBtn"
+                                onclick="selectClientType('personal')" aria-pressed="true">
+                            <div class="client-type-icon" aria-hidden="true">👤</div>
+                            <div class="client-type-text" data-en="Personal" data-es="Personal">Personal</div>
+                        </button>
+                        <button type="button" class="client-type-btn" id="businessBtn"
+                                onclick="selectClientType('business')" aria-pressed="false">
+                            <div class="client-type-icon" aria-hidden="true">🏢</div>
+                            <div class="client-type-text" data-en="Business" data-es="Negocio">Business</div>
+                        </button>
                     </div>
+                    <input type="hidden" name="clientType" id="clientTypeInput" value="personal">
+                </section>
 
-                    <div class="form-group">
-                        <label>
-                            <span class="required">*</span> 
-                            <span data-en="Contact Person Last Name" data-es="Apellido de Contacto">Contact Person Last Name</span>
-                        </label>
-                        <input type="text" 
-                            name="business_contactLastName"
-                            data-en="Smith"
-                            data-es="García"
-                            placeholder="Smith"
-                            data-required="true">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>
-                            <span class="required">*</span> 
-                            <span data-en="Business Email" data-es="Correo del Negocio">Business Email</span>
-                        </label>
-                        <input type="email" 
-                            name="business_email"
-                            data-en="info@business.com"
-                            data-es="info@negocio.com"
-                            placeholder="info@business.com"
-                            data-required="true">
-                    </div>
-
-                    <div class="form-group">
-                        <label>
-                            <span class="required">*</span> 
-                            <span data-en="Business Phone" data-es="Teléfono del Negocio">Business Phone</span>
-                        </label>
-                        <input type="tel" 
-                            name="business_phone"
-                            data-en="(123) 456-7890"
-                            data-es="(123) 456-7890"
-                            placeholder="(123) 456-7890"
-                            data-required="true">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <span data-en="Business Address" data-es="Dirección del Negocio">Business Address</span>
-                    </label>
-                    <input type="text" 
-                        name="business_address"
-                        data-en="123 Business Blvd, City, State ZIP"
-                        data-es="Blvd. Empresarial 123, Ciudad, Estado CP"
-                        placeholder="123 Business Blvd, City, State ZIP">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>
-                            <span data-en="EIN (if applicable)" data-es="EIN (si aplica)">EIN (if applicable)</span>
-                        </label>
-                        <input type="text" 
-                            name="business_ein"
-                            data-en="12-3456789"
-                            data-es="12-3456789"
-                            placeholder="12-3456789">
-                    </div>
-
-                    <div class="form-group">
-                        <label>
-                            <span data-en="Number of Vehicles" data-es="Número de Vehículos">Number of Vehicles</span>
-                        </label>
-                        <input type="number" 
-                            name="business_vehicles"
-                            data-en="1"
-                            data-es="1"
-                            placeholder="1"
-                            min="0">
-                    </div>
-                </div>
-            </div>
-                
-            <!-- Services Section (Always Visible) -->
-            <div class="form-section">
-                <h2 data-en="Services Needed" data-es="Servicios Necesarios">Services Needed</h2>
-
-                <div class="form-group">
-                    <label>
-                        <span class="required">*</span> 
-                        <span data-en="Primary Service" data-es="Servicio Principal">Primary Service</span>
-                    </label>
-                    <select name="serviceNeeded" required>
-                        <option value="" data-en="Select a service..." data-es="Seleccione un servicio...">Select a service...</option>
-                        <option value="llc" data-en="LLC Formation" data-es="Formación de LLC">LLC Formation</option>
-                        <option value="dmv" data-en="DMV Navigation" data-es="Gestión del DMV">DMV Navigation</option>
-                        <option value="tax" data-en="Tax Preparation" data-es="Preparación de Impuestos">Tax Preparation</option>
-                        <option value="documentation" data-en="Documentation Support" data-es="Soporte de Documentación">Documentation Support</option>
-                        <option value="multiple" data-en="Multiple Services" data-es="Múltiples Servicios">Multiple Services</option>
-                        <option value="consultation" data-en="General Consultation" data-es="Consultoría General">General Consultation</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <span data-en="Additional Information / Questions" data-es="Información Adicional / Preguntas">Additional Information / Questions</span>
-                    </label>
-                    <textarea name="additionalInfo" 
-                        data-en="Please provide any additional details or questions..."
-                        data-es="Por favor proporcione detalles adicionales o preguntas..."
-                        placeholder="Please provide any additional details or questions..."></textarea>
-                </div>
-            </div>
-
-            <!-- Document Upload Section (Always Visible) -->
-            <div class="form-section">
-                <h2 data-en="Document Upload" data-es="Subir Documentos">Document Upload</h2>
-                <p class="section-description" 
-                   data-en="Please upload any relevant documents (ID, tax forms, business documents, etc.)" 
-                   data-es="Por favor suba cualquier documento relevante (ID, formularios de impuestos, documentos comerciales, etc.)">
-                    Please upload any relevant documents (ID, tax forms, business documents, etc.)
-                </p>
-
-                <div class="upload-section">
-                    <div class="upload-options">
-                        <label for="fileInput" class="upload-btn">
-                            <div class="upload-btn-icon">📁</div>
-                            <div class="upload-btn-text" data-en="Choose Files" data-es="Elegir Archivos">Choose Files</div>
-                        </label>
-                        <input type="file" id="fileInput" multiple accept="image/*,.pdf,.doc,.docx">
-
-                        <div class="upload-btn" onclick="startCamera()">
-                            <div class="upload-btn-icon">📷</div>
-                            <div class="upload-btn-text" data-en="Take Photo" data-es="Tomar Foto">Take Photo</div>
+                <!-- ─── Personal Info ─── -->
+                <section class="form-section" id="personalInfo">
+                    <h2 data-en="Personal Information" data-es="Información Personal">Personal Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="p_firstName">
+                                <span class="required" aria-hidden="true">*</span>
+                                <span data-en="First Name" data-es="Nombre">First Name</span>
+                            </label>
+                            <input id="p_firstName" type="text" name="personal_firstName"
+                                   placeholder="John" data-en="John" data-es="Juan"
+                                   data-required="true" required autocomplete="given-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="p_lastName">
+                                <span class="required" aria-hidden="true">*</span>
+                                <span data-en="Last Name" data-es="Apellido">Last Name</span>
+                            </label>
+                            <input id="p_lastName" type="text" name="personal_lastName"
+                                   placeholder="Smith" data-en="Smith" data-es="García"
+                                   data-required="true" required autocomplete="family-name">
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="p_email">
+                                <span class="required" aria-hidden="true">*</span>
+                                <span data-en="Email Address" data-es="Correo Electrónico">Email Address</span>
+                            </label>
+                            <input id="p_email" type="email" name="personal_email"
+                                   placeholder="example@gmail.com" data-en="example@gmail.com" data-es="ejemplo@gmail.com"
+                                   data-required="true" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="p_phone">
+                                <span class="required" aria-hidden="true">*</span>
+                                <span data-en="Phone Number" data-es="Número de Teléfono">Phone Number</span>
+                            </label>
+                            <input id="p_phone" type="tel" name="personal_phone"
+                                   placeholder="(123) 456-7890" data-en="(123) 456-7890" data-es="(123) 456-7890"
+                                   data-required="true" required autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="p_address">
+                            <span data-en="Address" data-es="Dirección">Address</span>
+                        </label>
+                        <input id="p_address" type="text" name="personal_address"
+                               placeholder="123 Main Street, City, State ZIP"
+                               data-en="123 Main Street, City, State ZIP"
+                               data-es="Calle Principal 123, Ciudad, Estado CP"
+                               autocomplete="street-address">
+                    </div>
+                </section>
 
-                    <div class="uploaded-files" id="uploadedFiles"></div>
-                </div>
-            </div>
+                <!-- ─── Business Info ─── -->
+                <section class="form-section" id="businessInfo" style="display:none">
+                    <h2 data-en="Business Information" data-es="Información del Negocio">Business Information</h2>
+                    <div class="form-group">
+                        <label for="b_name">
+                            <span class="required" aria-hidden="true">*</span>
+                            <span data-en="Business Name" data-es="Nombre del Negocio">Business Name</span>
+                        </label>
+                        <input id="b_name" type="text" name="business_name"
+                               placeholder="ABC Trucking LLC" data-en="ABC Trucking LLC" data-es="ABC Transporte LLC"
+                               data-required="true" autocomplete="organization">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="b_firstName">
+                                <span class="required" aria-hidden="true">*</span>
+                                <span data-en="Contact First Name" data-es="Nombre de Contacto">Contact First Name</span>
+                            </label>
+                            <input id="b_firstName" type="text" name="business_contactFirstName"
+                                   placeholder="John" data-en="John" data-es="Juan"
+                                   data-required="true" autocomplete="given-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="b_lastName">
+                                <span class="required" aria-hidden="true">*</span>
+                                <span data-en="Contact Last Name" data-es="Apellido de Contacto">Contact Last Name</span>
+                            </label>
+                            <input id="b_lastName" type="text" name="business_contactLastName"
+                                   placeholder="Smith" data-en="Smith" data-es="García"
+                                   data-required="true" autocomplete="family-name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="b_email">
+                                <span class="required" aria-hidden="true">*</span>
+                                <span data-en="Business Email" data-es="Correo del Negocio">Business Email</span>
+                            </label>
+                            <input id="b_email" type="email" name="business_email"
+                                   placeholder="info@business.com" data-en="info@business.com" data-es="info@negocio.com"
+                                   data-required="true" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="b_phone">
+                                <span class="required" aria-hidden="true">*</span>
+                                <span data-en="Business Phone" data-es="Teléfono del Negocio">Business Phone</span>
+                            </label>
+                            <input id="b_phone" type="tel" name="business_phone"
+                                   placeholder="(123) 456-7890" data-en="(123) 456-7890" data-es="(123) 456-7890"
+                                   data-required="true" autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="b_address">
+                            <span data-en="Business Address" data-es="Dirección del Negocio">Business Address</span>
+                        </label>
+                        <input id="b_address" type="text" name="business_address"
+                               placeholder="123 Business Blvd, City, State ZIP"
+                               data-en="123 Business Blvd, City, State ZIP"
+                               data-es="Blvd. Empresarial 123, Ciudad, Estado CP"
+                               autocomplete="street-address">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="b_ein">
+                                <span data-en="EIN (if applicable)" data-es="EIN (si aplica)">EIN (if applicable)</span>
+                            </label>
+                            <input id="b_ein" type="text" name="business_ein"
+                                   placeholder="12-3456789" data-en="12-3456789" data-es="12-3456789">
+                        </div>
+                        <div class="form-group">
+                            <label for="b_vehicles">
+                                <span data-en="Number of Vehicles" data-es="Número de Vehículos">Number of Vehicles</span>
+                            </label>
+                            <input id="b_vehicles" type="number" name="business_vehicles"
+                                   placeholder="1" data-en="1" data-es="1" min="0">
+                        </div>
+                    </div>
+                </section>
 
-            <button type="submit" class="submit-btn" data-en="Submit Information" data-es="Enviar Información">Submit Information</button>
-        </form>
-    </div>
-</div>
+                <!-- ─── Services ─── -->
+                <section class="form-section">
+                    <h2 data-en="Services Needed" data-es="Servicios Necesarios">Services Needed</h2>
+                    <div class="form-group">
+                        <label for="serviceSelect">
+                            <span class="required" aria-hidden="true">*</span>
+                            <span data-en="Primary Service" data-es="Servicio Principal">Primary Service</span>
+                        </label>
+                        <select id="serviceSelect" name="serviceNeeded" required>
+                            <option value="" data-en="Select a service…" data-es="Seleccione un servicio…">Select a service…</option>
+                            <option value="llc"          data-en="LLC Formation"         data-es="Formación de LLC">LLC Formation</option>
+                            <option value="dmv"          data-en="DMV Navigation"        data-es="Gestión del DMV">DMV Navigation</option>
+                            <option value="ironsheepdog" data-en="IronSheepDog Support"  data-es="Apoyo IronSheepDog">IronSheepDog Support</option>
+                            <option value="documentation" data-en="Documentation Support" data-es="Soporte de Documentación">Documentation Support</option>
+                            <option value="multiple"     data-en="Multiple Services"     data-es="Múltiples Servicios">Multiple Services</option>
+                            <option value="consultation" data-en="General Consultation"  data-es="Consultoría General">General Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalInfo">
+                            <span data-en="Additional Information / Questions" data-es="Información Adicional / Preguntas">Additional Information / Questions</span>
+                        </label>
+                        <textarea id="additionalInfo" name="additionalInfo"
+                            data-en="Please provide any additional details or questions…"
+                            data-es="Por favor proporcione detalles adicionales o preguntas…"
+                            placeholder="Please provide any additional details or questions…"></textarea>
+                    </div>
+                </section>
 
-<!-- Fullscreen Camera Overlay -->
-<div id="cameraOverlay" class="camera-overlay" style="display:none;">
+                <!-- ─── Document Upload ─── -->
+                <section class="form-section">
+                    <h2 data-en="Document Upload" data-es="Subir Documentos">Document Upload</h2>
+                    <p class="section-description"
+                       data-en="Upload any relevant documents (ID, tax forms, business documents, etc.)"
+                       data-es="Suba cualquier documento relevante (ID, formularios de impuestos, documentos comerciales, etc.)">
+                        Upload any relevant documents (ID, tax forms, business documents, etc.)
+                    </p>
+
+                    <div class="upload-section">
+                        <div class="upload-options">
+                            <label for="fileInput" class="upload-btn">
+                                <div class="upload-btn-icon" aria-hidden="true">📁</div>
+                                <div class="upload-btn-text" data-en="Choose Files" data-es="Elegir Archivos">Upload Files</div>
+                            </label>
+                            <input type="file" id="fileInput" multiple accept="image/*,.pdf,.doc,.docx" aria-label="Upload files">
+
+                            <button type="button" class="upload-btn" onclick="startCamera()" aria-label="Take photo with camera">
+                                <div class="upload-btn-icon" aria-hidden="true">📷</div>
+                                <div class="upload-btn-text" data-en="Take Photo" data-es="Tomar Foto">Take Photo</div>
+                            </button>
+                        </div>
+
+                        <div class="uploaded-files" id="uploadedFiles" role="list" aria-live="polite"></div>
+                    </div>
+                </section>
+
+                <button type="submit" class="submit-btn"
+                        data-en="Submit Information" data-es="Enviar Información">
+                    Submit Information
+                </button>
+            </form>
+        </div><!-- /.intake-body -->
+    </div><!-- /.intake-container -->
+</main>
+
+<!-- Camera overlay -->
+<div id="cameraOverlay" class="camera-overlay" style="display:none" role="dialog" aria-label="Camera" aria-modal="true">
     <video id="cameraPreview" autoplay playsinline></video>
     <div class="camera-overlay-controls">
-        <button type="button" class="camera-capture-btn" onclick="capturePhoto()">📸</button>
-        <button type="button" class="camera-cancel-btn" onclick="stopCamera()" data-en="Cancel" data-es="Cancelar">Cancel</button>
+        <button type="button" class="camera-capture-btn" onclick="capturePhoto()" aria-label="Capture photo">📸</button>
+        <button type="button" class="camera-cancel-btn" onclick="stopCamera()"
+                data-en="Cancel" data-es="Cancelar">Cancel</button>
     </div>
 </div>
 
+<script src="./js/intake.js"></script>
 </body>
 </html>

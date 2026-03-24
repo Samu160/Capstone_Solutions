@@ -3,197 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Triad Energy – Expert trucking business consulting. LLC formation, DMV navigation, IronSheepDog, bilingual services.">
+    <title>Triad Energy | Trucking Business Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/intake.js" defer></script>
-    <title>Triad Energy</title>
 </head>
 <body>
-<header>
-    <nav>
-        <div class="logo" data-en="Triad Energy" data-es="Triad Energy">Triad Energy</div>
 
-        <ul class="nav-links">
-            <li><a href="#home" data-en="Home" data-es="Inicio">Home</a></li>
-            <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
-            <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
-            <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
-            
+<!-- ===== HEADER / NAV ===== -->
+<header id="site-header">
+    <nav class="nav-container">
+        <a href="index.html" class="nav-logo" aria-label="Triad Energy Home">
+            <span class="logo-text">Triad Energy</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks" role="list">
+            <li><a href="#home" class="nav-link" data-en="Home" data-es="Inicio">Home</a></li>
+            <li><a href="#services" class="nav-link" data-en="Services" data-es="Servicios">Services</a></li>
+            <li><a href="#about" class="nav-link" data-en="About" data-es="Nosotros">About</a></li>
+            <li><a href="#contact" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a></li>
         </ul>
 
-        <div class="lang-toggle-container">
-            <button class="lang-btn active" onclick="setLanguage('en', event)">English</button>
-            <button class="lang-btn" onclick="setLanguage('es', event)">Español</button>
+        <div class="nav-actions">
+            <div class="lang-toggle-container" role="group" aria-label="Language selection">
+                <button class="lang-btn active" onclick="setLanguage('en', event)" aria-pressed="true">EN</button>
+                <button class="lang-btn" onclick="setLanguage('es', event)" aria-pressed="false">ES</button>
+            </div>
+            <a href="intakeform.html" class="nav-cta" data-en="Get Started" data-es="Comenzar">Get Started</a>
         </div>
     </nav>
 </header>
 
-<section id="home" class="hero">
-    <h1 
-        data-en="Expert Trucking Business Consulting"
-        data-es="Consultoría Experta para Negocios de Transporte">
-        Expert Trucking Business Consulting
-    </h1>
-
-    <p 
-        data-en="We help small trucking companies establish their LLC, navigate DMV requirements, manage IronSheepDog, and handle all documentation, with specialized support for Spanish-speaking business owners."
-        data-es="Ayudamos a pequeñas empresas de transporte a establecer su LLC, navegar los requisitos del DMV, manejar IronSheepDog y toda la documentación, con apoyo especializado para dueños de negocios de habla hispana.">
-        We help small trucking companies establish their LLC, navigate DMV requirements, manage IronSheepDog, and handle all documentation, with specialized support for Spanish-speaking business owners.
-    </p>
-
-    <a href="intakeform.html" class="cta-button"
-       data-en="Get Started Today"
-       data-es="Comienza Hoy">
-        Get Started Today
-    </a>
+<!-- ===== HERO ===== -->
+<section id="home" class="hero" aria-label="Hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow" data-en="Trusted Trucking Consultants" data-es="Consultores de Transporte de Confianza">Trusted Trucking Consultants</p>
+        <h1 data-en="Expert Trucking<br>Business Consulting" data-es="Consultoría Experta<br>para Transporte">
+            Expert Trucking<br>Business Consulting
+        </h1>
+        <p class="hero-sub"
+           data-en="We help small trucking companies establish their LLC, navigate DMV requirements, manage IronSheepDog, and handle all documentation — with specialized support for Spanish-speaking business owners."
+           data-es="Ayudamos a pequeñas empresas de transporte a establecer su LLC, navegar los requisitos del DMV, manejar IronSheepDog y toda la documentación, con apoyo especializado para dueños de habla hispana.">
+            We help small trucking companies establish their LLC, navigate DMV requirements, manage IronSheepDog, and handle all documentation — with specialized support for Spanish-speaking business owners.
+        </p>
+        <div class="hero-actions">
+            <a href="intakeform.html" class="btn btn-primary"
+               data-en="Get Started Today" data-es="Comienza Hoy">Get Started Today</a>
+            <a href="#services" class="btn btn-ghost"
+               data-en="Our Services" data-es="Nuestros Servicios">Our Services</a>
+        </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+        <span></span>
+    </div>
 </section>
 
-<section id="services" class="services">
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+    <div class="trust-bar-inner">
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span data-en="LLC Formation" data-es="Formación LLC">LLC Formation</span>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span data-en="DMV Navigation" data-es="Gestión DMV">DMV Navigation</span>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span data-en="Bilingual Support" data-es="Apoyo Bilingüe">Bilingual Support</span>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span data-en="Nationwide Service" data-es="Servicio Nacional">Nationwide Service</span>
+        </div>
+    </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="services section-pad">
     <div class="container">
-        <h2 class="section-title"
-            data-en="Our Services"
-            data-es="Nuestros Servicios">
-            Our Services
-        </h2>
+        <div class="section-header">
+            <p class="section-eyebrow" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</p>
+            <h2 class="section-title" data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
+            <p class="section-sub"
+               data-en="Comprehensive consulting designed for small trucking operators and subcontractors."
+               data-es="Consultoría integral diseñada para pequeños transportistas y subcontratistas.">
+                Comprehensive consulting designed for small trucking operators and subcontractors.
+            </p>
+        </div>
 
         <div class="services-grid">
 
-            <div class="service-card">
-                <div class="service-icon">📋</div>
+            <article class="service-card" tabindex="0">
+                <div class="service-card-icon" aria-hidden="true">📋</div>
                 <h3 data-en="LLC Formation" data-es="Formación de LLC">LLC Formation</h3>
-                <p 
-                    data-en="Complete guidance through the business formation process. We handle all paperwork and ensure your company is compliant."
-                    data-es="Guía completa durante el proceso de formación del negocio. Nos encargamos de toda la documentación y cumplimiento.">
-                    Complete guidance through the business formation process. We handle all paperwork and ensure your company is compliant.
+                <p data-en="Complete guidance through the business formation process. We handle all paperwork and ensure your company is fully compliant from day one."
+                   data-es="Guía completa durante el proceso de formación del negocio. Nos encargamos de toda la documentación y cumplimiento desde el primer día.">
+                    Complete guidance through the business formation process. We handle all paperwork and ensure your company is fully compliant from day one.
                 </p>
-            </div>
+            </article>
 
-            <div class="service-card">
-                <div class="service-icon">🚗</div>
+            <article class="service-card" tabindex="0">
+                <div class="service-card-icon" aria-hidden="true">🚗</div>
                 <h3 data-en="DMV Navigation" data-es="Gestión del DMV">DMV Navigation</h3>
-                <p 
-                    data-en="Expert assistance with vehicle registration, titles, permits, and all DMV requirements."
-                    data-es="Asistencia experta con registro de vehículos, títulos, permisos y todos los requisitos del DMV.">
-                    Expert assistance with vehicle registration, titles, permits, and all DMV requirements.
+                <p data-en="Expert assistance with vehicle registration, titles, permits, and every DMV requirement that affects your fleet."
+                   data-es="Asistencia experta con registro de vehículos, títulos, permisos y todos los requisitos del DMV para su flota.">
+                    Expert assistance with vehicle registration, titles, permits, and every DMV requirement that affects your fleet.
                 </p>
-            </div>
+            </article>
 
-            <div class="service-card">
-                <div class="service-icon">🐕</div>
-                <h3 data-en="IronSheepDog Help" data-es="Ayuda con IronSheepDog">IronSheepDog Help</h3>
-                <p 
-                    data-en="Professional assistance with IronSheepDog platform setup, load management, and optimization for trucking businesses."
-                    data-es="Asistencia profesional con configuración de IronSheepDog, gestión de cargas y optimización para negocios de transporte.">
-                    Professional assistance with IronSheepDog platform setup, load management, and optimization for trucking businesses.
+            <article class="service-card" tabindex="0">
+                <div class="service-card-icon" aria-hidden="true">🐕</div>
+                <h3 data-en="IronSheepDog Support" data-es="Apoyo IronSheepDog">IronSheepDog Support</h3>
+                <p data-en="Professional assistance with IronSheepDog platform setup, load management, and optimization to maximize your earning potential."
+                   data-es="Asistencia profesional con configuración de IronSheepDog, gestión de cargas y optimización para maximizar sus ingresos.">
+                    Professional assistance with IronSheepDog platform setup, load management, and optimization to maximize your earning potential.
                 </p>
-            </div>
+            </article>
 
-            <div class="service-card">
-                <div class="service-icon">📄</div>
+            <article class="service-card" tabindex="0">
+                <div class="service-card-icon" aria-hidden="true">📄</div>
                 <h3 data-en="Documentation Support" data-es="Soporte de Documentación">Documentation Support</h3>
-                <p 
-                    data-en="Complete management of business documentation, compliance, and filings."
-                    data-es="Gestión completa de documentación empresarial, cumplimiento y registros.">
-                    Complete management of business documentation, compliance, and filings.
+                <p data-en="Complete management of business documentation, regulatory compliance, and all required filings — nothing falls through the cracks."
+                   data-es="Gestión completa de documentación empresarial, cumplimiento regulatorio y todos los registros requeridos.">
+                    Complete management of business documentation, regulatory compliance, and all required filings — nothing falls through the cracks.
                 </p>
-            </div>
+            </article>
 
-            <div class="service-card">
-                <div class="service-icon">🌍</div>
+            <article class="service-card" tabindex="0">
+                <div class="service-card-icon" aria-hidden="true">🌍</div>
                 <h3 data-en="Bilingual Services" data-es="Servicios Bilingües">Bilingual Services</h3>
-                <p 
-                    data-en="All services available in English and Spanish."
-                    data-es="Todos los servicios disponibles en inglés y español.">
-                    All services available in English and Spanish.
+                <p data-en="Every service available in both English and Spanish — because language should never be a barrier to building your business."
+                   data-es="Todos los servicios disponibles en inglés y español, porque el idioma nunca debe ser un obstáculo para su negocio.">
+                    Every service available in both English and Spanish — because language should never be a barrier to building your business.
                 </p>
-            </div>
+            </article>
 
-            <div class="service-card">
-                <div class="service-icon">🤝</div>
+            <article class="service-card" tabindex="0">
+                <div class="service-card-icon" aria-hidden="true">🤝</div>
                 <h3 data-en="Ongoing Consulting" data-es="Consultoría Continua">Ongoing Consulting</h3>
-                <p 
-                    data-en="Continuous support and guidance as your business grows."
-                    data-es="Apoyo y orientación continua a medida que su negocio crece.">
-                    Continuous support and guidance as your business grows.
+                <p data-en="Continuous support and strategic guidance as your business grows — we're a long-term partner, not a one-time service."
+                   data-es="Apoyo continuo y orientación estratégica a medida que su negocio crece. Somos un socio a largo plazo.">
+                    Continuous support and strategic guidance as your business grows — we're a long-term partner, not a one-time service.
                 </p>
-            </div>
+            </article>
 
         </div>
     </div>
 </section>
 
-<section id="about" class="about">
+<!-- ===== ABOUT ===== -->
+<section id="about" class="about section-pad">
     <div class="container">
-        <div class="about-content">
+        <div class="about-grid">
+            <div class="about-visual" aria-hidden="true">
+                <div class="about-visual-inner">
+                    <span class="about-icon">🚛</span>
+                    <div class="about-stat">
+                        <strong data-en="Nationwide" data-es="Nacional">Serving in the DMV</strong>
+                        <span data-en="Service Coverage" data-es="Cobertura de Servicio">Service Coverage</span>
+                    </div>
+                    <div class="about-stat">
+                        <strong data-en="English &amp; Spanish" data-es="Inglés y Español">English &amp; Spanish</strong>
+                        <span data-en="Fully Bilingual" data-es="Completamente Bilingüe">Fully Bilingual</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="about-text">
-                <h2 data-en="About Us" data-es="Sobre Nosotros">About Us</h2>
+                <p class="section-eyebrow" data-en="Who We Are" data-es="Quiénes Somos">Who We Are</p>
+                <h2 class="section-title" data-en="About Triad Energy" data-es="Sobre Triad Energy">About Triad Energy</h2>
 
-                <p 
-                    data-en="We specialize in helping small trucking subcontractors navigate business formation and compliance."
-                    data-es="Nos especializamos en ayudar a pequeños subcontratistas de transporte con la formación y el cumplimiento empresarial.">
-                    We specialize in helping small trucking subcontractors navigate business formation and compliance.
+                <p data-en="We specialize in helping small trucking subcontractors navigate business formation and compliance — the paperwork, the regulations, and the platforms that can feel overwhelming when you're just getting started."
+                   data-es="Nos especializamos en ayudar a pequeños subcontratistas de transporte con la formación empresarial y el cumplimiento: los trámites, las regulaciones y las plataformas que pueden resultar abrumadoras al comenzar.">
+                    We specialize in helping small trucking subcontractors navigate business formation and compliance — the paperwork, the regulations, and the platforms that can feel overwhelming when you're just getting started.
                 </p>
 
-                <p 
-                    data-en="With years of experience, we provide personalized consulting especially for Spanish-speaking communities."
-                    data-es="Con años de experiencia, brindamos consultoría personalizada especialmente para comunidades de habla hispana.">
-                    With years of experience, we provide personalized consulting especially for Spanish-speaking communities.
+                <p data-en="With years of hands-on experience, we provide personalized consulting with special focus on Spanish-speaking communities who deserve the same access to professional guidance."
+                   data-es="Con años de experiencia práctica, brindamos consultoría personalizada con especial atención a las comunidades de habla hispana que merecen el mismo acceso a orientación profesional.">
+                    With years of hands-on experience, we provide personalized consulting with special focus on Spanish-speaking communities who deserve the same access to professional guidance.
                 </p>
 
-                <p 
-                    data-en="Our mission is to make starting and running a trucking business simple and stress free."
-                    data-es="Nuestra misión es hacer que iniciar y administrar un negocio de transporte sea simple y sin estrés.">
-                    Our mission is to make starting and running a trucking business simple and stress free.
+                <p data-en="Our mission is simple: make starting and running a trucking business straightforward, compliant, and stress-free."
+                   data-es="Nuestra misión es simple: hacer que iniciar y administrar un negocio de transporte sea sencillo, conforme y sin estrés.">
+                    Our mission is simple: make starting and running a trucking business straightforward, compliant, and stress-free.
                 </p>
+
+                <a href="intakeform.html" class="btn btn-primary" style="margin-top:2rem;"
+                   data-en="Get Started" data-es="Comienza">Get Started</a>
             </div>
-
-            <div class="about-image">🚛</div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="contact">
-    <div class="contact-content">
-        <h2 data-en="Get In Touch" data-es="Contáctanos">Get In Touch</h2>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact section-pad">
+    <div class="container">
+        <div class="section-header section-header--light">
+            <p class="section-eyebrow" data-en="Reach Out" data-es="Comunícate">Reach Out</p>
+            <h2 class="section-title" data-en="Get In Touch" data-es="Contáctanos">Get In Touch</h2>
+            <p class="section-sub"
+               data-en="Ready to start or grow your trucking business? We're here to help."
+               data-es="¿Listo para comenzar o hacer crecer su negocio de transporte? Estamos aquí para ayudar.">
+                Ready to start or grow your trucking business? We're here to help.
+            </p>
+        </div>
 
-        <p 
-            data-en="Ready to start or grow your trucking business? Contact us today."
-            data-es="¿Listo para comenzar o hacer crecer su negocio de transporte? Contáctenos hoy.">
-            Ready to start or grow your trucking business? Contact us today.
+        <div class="contact-cta">
+            <a href="intakeform.html" class="btn btn-primary btn-lg"
+               data-en="Fill Out Our Intake Form" data-es="Complete Nuestro Formulario">Fill Out Our Intake Form</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="footer-name">Triad Energy</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#home" data-en="Home" data-es="Inicio">Home</a>
+            <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+            <a href="#about" data-en="About" data-es="Nosotros">About</a>
+            <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+            <a href="intakeform.html" data-en="Intake Form" data-es="Formulario">Intake Form</a>
+        </nav>
+        <p class="footer-copy"
+           data-en="© 2024 Triad Energy. All rights reserved. Proudly serving the trucking community."
+           data-es="© 2024 Triad Energy. Todos los derechos reservados. Sirviendo con orgullo a la comunidad de transporte.">
+            © 2024 Triad Energy. All rights r            © 2024 Triad Energy. All rights reserved. Proudly serving the trucking community.
         </p>
-
-        <div class="contact-info">
-            <div class="contact-item">
-                <h3 data-en="📞 Phone" data-es="📞 Teléfono">📞 Phone</h3>
-                <p>(555) 123-4567</p>
-            </div>
-
-            <div class="contact-item">
-                <h3 data-en="📧 Email" data-es="📧 Correo">📧 Email</h3>
-                <p>info@triadenergy.com</p>
-            </div>
-
-            <div class="contact-item">
-                <h3 data-en="📍 Location" data-es="📍 Ubicación">📍 Location</h3>
-                <p data-en="Serving nationwide" data-es="Servicio a nivel nacional">Serving nationwide</p>
-            </div>
-        </div>
-
-        <div class="cta-section">
-            <a href="intakeform.html" class="cta-button"
-               data-en="Fill Out Our Intake Form"
-               data-es="Complete Nuestro Formulario">
-                Fill Out Our Intake Form
-            </a>
-        </div>
     </div>
-</section>
-
-<footer>
-    <p 
-        data-en="© 2024 Triad Energy. All rights reserved. Proudly serving the trucking community."
-        data-es="© 2024 Triad Energy. Todos los derechos reservados. Sirviendo con orgullo a la comunidad de transporte.">
-        © 2024 Triad Energy. All rights reserved. Proudly serving the trucking community.
-    </p>
 </footer>
+
+<script src="./js/intake.js"></script>
 </body>
 </html>
