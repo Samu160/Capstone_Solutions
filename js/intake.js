@@ -1,20 +1,5 @@
-
-/* =============================================
-   Triad Energy — intake.js
-   All site JavaScript lives here.
-   ============================================= */
-
-'use strict';
-
-/* ================================================
-   SHARED STATE
-   ================================================ */
 let currentLanguage = 'en';
 
-/* ================================================
-   LANGUAGE SWITCHING
-   (used on both index.html and intakeform.html)
-   ================================================ */
 function setLanguage(lang, e) {
     currentLanguage = lang;
 
@@ -40,9 +25,6 @@ function setLanguage(lang, e) {
     });
 }
 
-/* ================================================
-   STICKY HEADER  (index.html only)
-   ================================================ */
 (function initStickyHeader() {
     const header = document.getElementById('site-header');
     if (!header) return;
@@ -52,9 +34,6 @@ function setLanguage(lang, e) {
     update();
 })();
 
-/* ================================================
-   MOBILE NAV TOGGLE  (index.html only)
-   ================================================ */
 (function initMobileNav() {
     const btn   = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
@@ -73,9 +52,6 @@ function setLanguage(lang, e) {
     });
 })();
 
-/* ================================================
-   SMOOTH SCROLL  (index.html only)
-   ================================================ */
 (function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
@@ -88,9 +64,6 @@ function setLanguage(lang, e) {
     });
 })();
 
-/* ================================================
-   SCROLL REVEAL  (index.html only)
-   ================================================ */
 (function initScrollReveal() {
     const targets = document.querySelectorAll('.service-card, .about-visual, .about-text, .contact-card');
     if (!targets.length) return;
@@ -116,13 +89,9 @@ function setLanguage(lang, e) {
     targets.forEach(el => observer.observe(el));
 })();
 
-/* ================================================
-   INTAKE FORM  (intakeform.html only)
-   ================================================ */
 let uploadedFiles = [];
 let cameraStream  = null;
 
-/* ---- Client Type Toggle ---- */
 function selectClientType(type) {
     const personalInfo = document.getElementById('personalInfo');
     const businessInfo = document.getElementById('businessInfo');
@@ -153,7 +122,6 @@ function selectClientType(type) {
     clientInput.value = type;
 }
 
-/* ---- File Handling ---- */
 function handleFiles(files) {
     for (const file of files) {
         if (file.size / 1024 > 1000) {
@@ -196,10 +164,7 @@ function renderFileList() {
 }
 
 function getFileIcon(type) {
-    if (type.includes('image'))                              return '🖼️';
-    if (type.includes('pdf'))                               return '📕';
-    if (type.includes('document') || type.includes('word')) return '📄';
-    return '📎';
+    return '';
 }
 
 function removeFile(idx) {
@@ -207,7 +172,6 @@ function removeFile(idx) {
     renderFileList();
 }
 
-/* ---- Camera ---- */
 async function startCamera() {
     try {
         cameraStream = await navigator.mediaDevices.getUserMedia({
@@ -255,7 +219,6 @@ function stopCamera() {
     document.body.style.overflow = '';
 }
 
-/* ---- Form Submit ---- */
 async function handleSubmit(e) {
     e.preventDefault();
 
@@ -297,7 +260,6 @@ async function handleSubmit(e) {
     }
 }
 
-/* ---- DOMContentLoaded: wire up intake form listeners ---- */
 document.addEventListener('DOMContentLoaded', () => {
     const fileInput  = document.getElementById('fileInput');
     const intakeForm = document.getElementById('intakeForm');

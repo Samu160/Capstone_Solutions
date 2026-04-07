@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Triad Energy Client Intake Form – Start your trucking business consultation.">
     <title>Client Intake Form | Triad Energy</title>
+    
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/intakestyle.css">
-    <head>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-</head>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
-<!-- back home button -->
 <div class="intake-topbar">
     <a href="index.html" class="intake-back-link">
         <span class="intake-topbar-name">Triad Energy</span>
@@ -26,10 +25,11 @@
 <main class="intake-wrapper">
     <div class="intake-container">
 
-        <!--Header-->
         <div class="intake-header">
             <p class="intake-eyebrow" data-en="Consultation Request" data-es="Solicitud de Consulta">Consultation Request</p>
             <h1 data-en="Client Intake Form" data-es="Formulario de Registro">Client Intake Form</h1>
+        
+        
             <p data-en="Please complete this form and upload any required documents. We'll follow up within 3–5 business days."
                data-es="Complete este formulario y suba los documentos requeridos. Le responderemos en 3–5 días hábiles.">
                 Please complete this form and upload any required documents. We'll follow up within 3–5 business days.
@@ -38,54 +38,57 @@
 
         <div class="intake-body">
 
-            <!--Language Button-->
             <div class="lang-toggle-container" role="group" aria-label="Language selection">
                 <button class="lang-btn active" onclick="setLanguage('en', event)" aria-pressed="true">English</button>
                 <button class="lang-btn" onclick="setLanguage('es', event)" aria-pressed="false">Español</button>
             </div>
 
-            <!--Status message-->
+           
+           
             <div class="msg msg--success" id="successMessage" role="alert" hidden>
-                <span data-en="✓ Your information has been submitted successfully! We will contact you soon."
-                      data-es="✓ ¡Su información ha sido enviada exitosamente! Nos contactaremos pronto.">
-                    ✓ Your information has been submitted successfully! We will contact you soon.
+                <span data-en="Your information has been submitted successfully. We will contact you soon."
+                      data-es="Su información ha sido enviada exitosamente. Nos contactaremos pronto.">
+                    Your information has been submitted successfully. We will contact you soon.
                 </span>
             </div>
+
             <div class="msg msg--error" id="errorMessage" role="alert" hidden>
-                <span data-en="✗ There was an error submitting your information. Please try again."
-                      data-es="✗ Hubo un error al enviar su información. Por favor intente de nuevo.">
-                    ✗ There was an error submitting your information. Please try again.
+                <span data-en="There was an error submitting your information. Please try again."
+                      data-es="Hubo un error al enviar su información. Por favor intente de nuevo.">
+                    There was an error submitting your information. Please try again.
                 </span>
             </div>
 
             <form id="intakeForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
-                <!-- Web3Forms config -->
+
+               
+               
                 <input type="hidden" name="access_key" value="dbbdbdc8-3343-49d7-b61c-2e3319e53dfe">
                 <input type="hidden" name="subject" value="New Client Intake Form - Triad Energy">
                 <input type="hidden" name="from_name" value="Triad Energy Intake Form">
-                <!-- Cloudfare Turnstile config -->
+
                 <div class="cf-turnstile" data-sitekey="0x4AAAAAACyj9GYVP0aQw2Vr" data-theme="light"></div>
 
-                <!--Client Intake Form-->
                 <section class="form-section">
                     <h2 data-en="I am requesting services for:" data-es="Solicito servicios para:">I am requesting services for:</h2>
 
+                   
                     <div class="client-type-selector" role="group" aria-label="Client type">
                         <button type="button" class="client-type-btn active" id="personalBtn"
                                 onclick="selectClientType('personal')" aria-pressed="true">
-                            <div class="client-type-icon" aria-hidden="true"></div>
                             <div class="client-type-text" data-en="Personal" data-es="Personal">Personal</div>
                         </button>
                         <button type="button" class="client-type-btn" id="businessBtn"
                                 onclick="selectClientType('business')" aria-pressed="false">
-                            <div class="client-type-icon" aria-hidden="true"></div>
                             <div class="client-type-text" data-en="Business" data-es="Negocio">Business</div>
                         </button>
                     </div>
+                   
+                   
+                   
                     <input type="hidden" name="clientType" id="clientTypeInput" value="personal">
                 </section>
 
-                <!-- PPI Info -->
                 <section class="form-section" id="personalInfo">
                     <h2 data-en="Personal Information" data-es="Información Personal">Personal Information</h2>
                     <div class="form-row">
@@ -97,8 +100,12 @@
                             <input id="p_firstName" type="text" name="personal_firstName"
                                    placeholder="John" data-en="John" data-es="Juan"
                                    data-required="true" required autocomplete="given-name">
-                        </div>
-                        <div class="form-group">
+                        
+                        
+                                </div>
+                        
+                        
+                                <div class="form-group">
                             <label for="p_lastName">
                                 <span class="required" aria-hidden="true">*</span>
                                 <span data-en="Last Name" data-es="Apellido">Last Name</span>
@@ -110,10 +117,16 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
+                          
                             <label for="p_email">
                                 <span class="required" aria-hidden="true">*</span>
                                 <span data-en="Email Address" data-es="Correo Electrónico">Email Address</span>
+                            
+                            
+                            
                             </label>
+                           
+                           
                             <input id="p_email" type="email" name="personal_email"
                                    placeholder="example@gmail.com" data-en="example@gmail.com" data-es="ejemplo@gmail.com"
                                    data-required="true" required autocomplete="email">
@@ -140,10 +153,11 @@
                     </div>
                 </section>
 
-                <!--Business infomation form-->
                 <section class="form-section" id="businessInfo" style="display:none">
                     <h2 data-en="Business Information" data-es="Información del Negocio">Business Information</h2>
                     <div class="form-group">
+                       
+                       
                         <label for="b_name">
                             <span class="required" aria-hidden="true">*</span>
                             <span data-en="Business Name" data-es="Nombre del Negocio">Business Name</span>
@@ -163,6 +177,8 @@
                                    data-required="true" autocomplete="given-name">
                         </div>
                         <div class="form-group">
+                           
+                           
                             <label for="b_lastName">
                                 <span class="required" aria-hidden="true">*</span>
                                 <span data-en="Contact Last Name" data-es="Apellido de Contacto">Contact Last Name</span>
@@ -174,6 +190,8 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
+                          
+                          
                             <label for="b_email">
                                 <span class="required" aria-hidden="true">*</span>
                                 <span data-en="Business Email" data-es="Correo del Negocio">Business Email</span>
@@ -183,6 +201,8 @@
                                    data-required="true" autocomplete="email">
                         </div>
                         <div class="form-group">
+                           
+                           
                             <label for="b_phone">
                                 <span class="required" aria-hidden="true">*</span>
                                 <span data-en="Business Phone" data-es="Teléfono del Negocio">Business Phone</span>
@@ -193,6 +213,8 @@
                         </div>
                     </div>
                     <div class="form-group">
+                       
+                       
                         <label for="b_address">
                             <span data-en="Business Address" data-es="Dirección del Negocio">Business Address</span>
                         </label>
@@ -203,6 +225,9 @@
                                autocomplete="street-address">
                     </div>
                     <div class="form-row">
+                       
+                       
+                       
                         <div class="form-group">
                             <label for="b_ein">
                                 <span data-en="EIN (if applicable)" data-es="EIN (si aplica)">EIN (if applicable)</span>
@@ -220,22 +245,27 @@
                     </div>
                 </section>
 
-                <!-- Services-->
                 <section class="form-section">
+                   
+                   
                     <h2 data-en="Services Needed" data-es="Servicios Necesarios">Services Needed</h2>
                     <div class="form-group">
                         <label for="serviceSelect">
                             <span class="required" aria-hidden="true">*</span>
                             <span data-en="Primary Service" data-es="Servicio Principal">Primary Service</span>
                         </label>
+                       
+                       
                         <select id="serviceSelect" name="serviceNeeded" required>
                             <option value="" data-en="Select a service…" data-es="Seleccione un servicio…">Select a service…</option>
-                            <option value="llc"          data-en="LLC Formation"         data-es="Formación de LLC">LLC Formation</option>
-                            <option value="dmv"          data-en="DMV Navigation"        data-es="Gestión del DMV">DMV Navigation</option>
-                            <option value="Trucking Platform Support" data-en="Platform Support"  data-es="Assistencia en Plataformas">Trucking Platform Support</option>
+                            <option value="llc" data-en="LLC Formation" data-es="Formación de LLC">LLC Formation</option>
+                            <option value="dmv" data-en="DMV Navigation" data-es="Gestión del DMV">DMV Navigation</option>
+                            <option value="Trucking Platform Support" data-en="Platform Support" data-es="Assistencia en Plataformas">Trucking Platform Support</option>
                             <option value="documentation" data-en="Documentation Support" data-es="Soporte de Documentación">Documentation Support</option>
-                            <option value="multiple"     data-en="Multiple Services"     data-es="Múltiples Servicios">Multiple Services</option>
-                            <option value="consultation" data-en="General Consultation"  data-es="Consultoría General">General Consultation</option>
+                            <option value="multiple" data-en="Multiple Services" data-es="Múltiples Servicios">Multiple Services</option>
+                            <option value="consultation" data-en="General Consultation" data-es="Consultoría General">General Consultation</option>
+                        
+                        
                         </select>
                     </div>
                     <div class="form-group">
@@ -249,9 +279,11 @@
                     </div>
                 </section>
 
-                <!-- Document Upload -->
                 <section class="form-section">
                     <h2 data-en="Document Upload" data-es="Subir Documentos">Document Upload</h2>
+                   
+                   
+                   
                     <p class="section-description"
                        data-en="Upload any relevant documents (ID, tax forms, business documents, etc.)"
                        data-es="Suba cualquier documento relevante (ID, formularios de impuestos, documentos comerciales, etc.)">
@@ -261,13 +293,19 @@
                     <div class="upload-section">
                         <div class="upload-options">
                             <label for="fileInput" class="upload-btn">
-                                <div class="upload-btn-icon" aria-hidden="true">📁</div>
-                                <div class="upload-btn-text" data-en="Choose Files" data-es="Elegir Archivos">Upload Files</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                                    <polyline points="13 2 13 9 20 9"/>
+                                </svg>
+                                <div class="upload-btn-text" data-en="Upload Files" data-es="Elegir Archivos">Upload Files</div>
                             </label>
                             <input type="file" id="fileInput" multiple accept="image/*,.pdf,.doc,.docx" aria-label="Upload files">
 
                             <button type="button" class="upload-btn" onclick="startCamera()" aria-label="Take photo with camera">
-                                <div class="upload-btn-icon" aria-hidden="true">📷</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                    <circle cx="12" cy="13" r="4"/>
+                                </svg>
                                 <div class="upload-btn-text" data-en="Take Photo" data-es="Tomar Foto">Take Photo</div>
                             </button>
                         </div>
@@ -276,22 +314,20 @@
                     </div>
                 </section>
 
-                <button type="submit" class="submit-btn"
-                        data-en="Submit Information" data-es="Enviar Información">
+                <button type="submit" class="submit-btn" data-en="Submit Information" data-es="Enviar Información">
                     Submit Information
                 </button>
             </form>
-        </div><!-- /.intake-body -->
-    </div><!-- /.intake-container -->
+
+        </div>
+    </div>
 </main>
 
-<!-- Camera overlay -->
 <div id="cameraOverlay" class="camera-overlay" style="display:none" role="dialog" aria-label="Camera" aria-modal="true">
     <video id="cameraPreview" autoplay playsinline></video>
     <div class="camera-overlay-controls">
-        <button type="button" class="camera-capture-btn" onclick="capturePhoto()" aria-label="Capture photo">📸</button>
-        <button type="button" class="camera-cancel-btn" onclick="stopCamera()"
-                data-en="Cancel" data-es="Cancelar">Cancel</button>
+        <button type="button" class="camera-capture-btn" onclick="capturePhoto()" aria-label="Capture photo">Capture</button>
+        <button type="button" class="camera-cancel-btn" onclick="stopCamera()" data-en="Cancel" data-es="Cancelar">Cancel</button>
     </div>
 </div>
 
