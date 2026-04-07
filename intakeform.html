@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<!-- Back-to-home bar -->
+<!-- back home button -->
 <div class="intake-topbar">
     <a href="index.html" class="intake-back-link">
         <span class="intake-topbar-name">Triad Energy</span>
@@ -26,7 +26,7 @@
 <main class="intake-wrapper">
     <div class="intake-container">
 
-        <!-- Header -->
+        <!--Header-->
         <div class="intake-header">
             <p class="intake-eyebrow" data-en="Consultation Request" data-es="Solicitud de Consulta">Consultation Request</p>
             <h1 data-en="Client Intake Form" data-es="Formulario de Registro">Client Intake Form</h1>
@@ -38,13 +38,13 @@
 
         <div class="intake-body">
 
-            <!-- Lang toggle -->
+            <!--Language Button-->
             <div class="lang-toggle-container" role="group" aria-label="Language selection">
                 <button class="lang-btn active" onclick="setLanguage('en', event)" aria-pressed="true">English</button>
                 <button class="lang-btn" onclick="setLanguage('es', event)" aria-pressed="false">Español</button>
             </div>
 
-            <!-- Status messages -->
+            <!--Status message-->
             <div class="msg msg--success" id="successMessage" role="alert" hidden>
                 <span data-en="✓ Your information has been submitted successfully! We will contact you soon."
                       data-es="✓ ¡Su información ha sido enviada exitosamente! Nos contactaremos pronto.">
@@ -66,7 +66,7 @@
                 <!-- Cloudfare Turnstile config -->
                 <div class="cf-turnstile" data-sitekey="0x4AAAAAACyj9GYVP0aQw2Vr" data-theme="light"></div>
 
-                <!-- ─── Client Type ─── -->
+                <!--Client Intake Form-->
                 <section class="form-section">
                     <h2 data-en="I am requesting services for:" data-es="Solicito servicios para:">I am requesting services for:</h2>
 
@@ -85,7 +85,7 @@
                     <input type="hidden" name="clientType" id="clientTypeInput" value="personal">
                 </section>
 
-                <!-- ─── Personal Info ─── -->
+                <!-- PPI Info -->
                 <section class="form-section" id="personalInfo">
                     <h2 data-en="Personal Information" data-es="Información Personal">Personal Information</h2>
                     <div class="form-row">
@@ -140,7 +140,7 @@
                     </div>
                 </section>
 
-                <!-- ─── Business Info ─── -->
+                <!--Business infomation form-->
                 <section class="form-section" id="businessInfo" style="display:none">
                     <h2 data-en="Business Information" data-es="Información del Negocio">Business Information</h2>
                     <div class="form-group">
@@ -220,7 +220,7 @@
                     </div>
                 </section>
 
-                <!-- ─── Services ─── -->
+                <!-- Services-->
                 <section class="form-section">
                     <h2 data-en="Services Needed" data-es="Servicios Necesarios">Services Needed</h2>
                     <div class="form-group">
@@ -249,7 +249,7 @@
                     </div>
                 </section>
 
-                <!-- ─── Document Upload ─── -->
+                <!-- Document Upload -->
                 <section class="form-section">
                     <h2 data-en="Document Upload" data-es="Subir Documentos">Document Upload</h2>
                     <p class="section-description"
