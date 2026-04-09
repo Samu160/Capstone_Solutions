@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Triad Energy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --navy:       #0b1c30;
+            --navy-light: #1a3550;
+            --gold:       #c8903a;
+            --gold-light: #dfa94e;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(150deg, var(--navy) 0%, var(--navy-light) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 3.5rem 3rem;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 24px 64px rgba(0,0,0,.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        }
+        .check-wrap {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.75rem;
+            box-shadow: 0 8px 24px rgba(200,144,58,.38);
+            animation: popIn .5s cubic-bezier(.36,1.56,.64,1) both;
+        }
+        @keyframes popIn {
+            from { transform: scale(0); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+        .check-mark {
+            width: 32px;
+            height: 32px;
+            stroke: #fff;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+        h1 {
+            font-family: 'Cinzel', Georgia, serif;
+            color: var(--navy);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #5a6a7e;
+            line-height: 1.8;
+            margin-bottom: .75rem;
+            font-size: .97rem;
+        }
+        strong { color: var(--navy); font-weight: 700; }
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+            margin-top: 2.25rem;
+        }
+        .btn {
+            padding: .9rem 1.5rem;
+            border-radius: 40px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: .87rem;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background .22s ease, border-color .22s ease, color .22s ease, transform .22s ease;
+            display: block;
+        }
+        .btn-primary {
+            background: var(--gold);
+            color: #fff;
+            border: 2px solid var(--gold);
+            box-shadow: 0 4px 18px rgba(200,144,58,.3);
+        }
+        .btn-primary:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid #dde3ec;
+        }
+        .btn-ghost:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="card" role="main">
+        <div class="check-wrap" aria-hidden="true">
+            <svg class="check-mark" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"/>
+            </svg>
+        </div>
+        <h1>Thank You</h1>
+        <p>Your form has been successfully received.</p>
+        <p>A member of our team will contact you within <strong>3 to 5 business days</strong>.</p>
+        <p>In the meantime, you can reach us at <strong>info@triadenergy.com</strong>.</p>
+        <div class="actions">
+            <a href="index.html"      class="btn btn-primary">Return to Home</a>
+            <a href="intakeform.html" class="btn btn-ghost">Submit Another Form</a>
+        </div>
+    </div>
+</body>
+</html>
